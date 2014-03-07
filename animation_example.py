@@ -42,20 +42,20 @@ class Digimon(pygame.sprite.Sprite):
         jump2.fill(ORANGE)
 
 
-        dict = {'walk1': walk1,
-                'walk2': walk2,
-                'jump1': jump1,
-                'jump2': jump2}
+        image_dict = {'walk1': walk1,
+                      'walk2': walk2,
+                      'jump1': jump1,
+                      'jump2': jump2}
 
-        return dict
+        return image_dict
 
 
     def create_animation_lists(self):
         """Creates the different lists of images for animation"""
-        dict = self.image_dict
+        image_dict = self.image_dict
 
-        walk_list = [dict['walk1'], dict['walk2']]
-        jump_list = [dict['jump1'], dict['jump2']]
+        walk_list = [image_dict['walk1'], image_dict['walk2']]
+        jump_list = [image_dict['jump1'], image_dict['jump2']]
 
         animation_dict = {'walking': walk_list,
                           'jumping': jump_list}
@@ -65,11 +65,11 @@ class Digimon(pygame.sprite.Sprite):
 
     def create_state_dict(self):
         """Creates a dictionary of a Digimon's behavior states"""
-        dict = {'walking': self.walking,
-                'jumping': self.jumping,
-                'resting': self.resting}
+        state_dict = {'walking': self.walking,
+                      'jumping': self.jumping,
+                      'resting': self.resting}
 
-        return dict
+        return state_dict
 
 
     def walking(self):
